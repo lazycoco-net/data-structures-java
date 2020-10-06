@@ -1,5 +1,7 @@
 package net.lazycoco.datastructures;
 
+import java.util.EmptyStackException;
+
 public class MyStack<T> {
     private class Node {
         private T element;
@@ -26,7 +28,7 @@ public class MyStack<T> {
 
     public T pop() {
         if (isEmpty()) {
-            throw new EmptyStackException("No elements left in stack");
+            throw new EmptyStackException();
         }
         T result = top.element;
         top = top.previous;
@@ -35,7 +37,7 @@ public class MyStack<T> {
 
     public T peek() {
         if (isEmpty()) {
-            throw new EmptyStackException("No elements left in stack");
+            throw new EmptyStackException();
         }
         return top.element;
     }
